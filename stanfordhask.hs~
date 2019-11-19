@@ -1,0 +1,5 @@
+data Move = Rock | Paper | Scissors
+     deriving (Eq, Read, Show, Enum, Bounded)
+
+data Outcome = Lose | Tie | Win deriving (Show, Eq, Ord)
+
