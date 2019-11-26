@@ -36,5 +36,24 @@ palindrome :: (Eq a) => [a] -> Bool
 palindrome [x]= True
 palindrome []= True
 palindrome xs= xs==reversed(xs)
-               
+
+-- had to refer solution               
+data NestedList a = Elem a | List [NestedList a]
+flatten :: NestedList a -> [a]
+flatten (Elem a   )   = [a]
+flatten (List (x:xs)) = flatten x ++ flatten (List xs)
+flatten (List [])     = []
+
+
+single :: (Eq a) => [a] -> [a]
+single []=[]
+single [x]=[x]
+single (x:y:[]) = x:y:[]
+single (x:y:ys)
+
+    |  x==y = single (y:ys)
+
+    |  otherwise = x:single (y:ys)  
+
+
 
